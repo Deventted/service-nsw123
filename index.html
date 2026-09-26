@@ -8,13 +8,15 @@
 
   <meta name="apple-mobile-web-app-title" content="Service NSW">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="favicon.ico" sizes="32x32">
 
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -25,22 +27,29 @@
 
     #loading {
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: Arial, sans-serif;
       background: #F5F5F5;
-      z-index: 10;
+      font-family: Arial, sans-serif;
+      z-index: 9999;
     }
 
     #prototype {
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: 0;
+      margin: 0;
+      padding: 0;
       display: none;
+      overflow: hidden;
     }
   </style>
 </head>
@@ -53,13 +62,15 @@
 
   <iframe
     id="prototype"
-    src="https://cloud.protopie.io/p/7f29991dbc9eb806c90f0748?ui=false&scaleToFit=true&enableHotspotHints=true&cursorType=touch&mockup=true&bgColor=%23F5F5F5&bgImage=undefined&playSpeed=1"
+    src="https://cloud.protopie.io/p/7f29991dbc9eb806c90f0748?ui=true&scaleToFit=true&enableHotspotHints=true&cursorType=touch&mockup=true&bgColor=%23F5F5F5&bgImage=undefined&playSpeed=1"
+    frameborder="0"
+    scrolling="no"
     allow="fullscreen"
     allowfullscreen>
   </iframe>
 
   <script>
-    setTimeout(function() {
+    setTimeout(function () {
       document.getElementById("loading").style.display = "none";
       document.getElementById("prototype").style.display = "block";
     }, 7000);
